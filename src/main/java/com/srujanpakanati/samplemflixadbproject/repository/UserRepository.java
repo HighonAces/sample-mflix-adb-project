@@ -1,6 +1,6 @@
 package com.srujanpakanati.samplemflixadbproject.repository;
 
-import model.User;
+import com.srujanpakanati.samplemflixadbproject.model.User;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 import java.util.List;

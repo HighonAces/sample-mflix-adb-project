@@ -1,23 +1,27 @@
-package model;
+package com.srujanpakanati.samplemflixadbproject.model;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection = "users")
-public class User {
+import java.util.Date;
+
+@Document(collection = "comments")
+public class Comment {
     @Id
     private String id;
     private String name;
     private String email;
-    private String password;
+    private String text;
+    private Date date;
 
-    public User() {
+    public Comment() {
     }
 
-    public User(String name, String email, String password) {
+    public Comment(String name, String email, String text, Date date) {
         this.name = name;
         this.email = email;
-        this.password = password;
+        this.text = text;
+        this.date = date;
     }
 
     public String getId() {
@@ -44,21 +48,30 @@ public class User {
         this.email = email;
     }
 
-    public String getPassword() {
-        return password;
+    public String getText() {
+        return text;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setText(String text) {
+        this.text = text;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
     }
 
     @Override
     public String toString() {
-        return "User{" +
+        return "Comment{" +
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
                 ", email='" + email + '\'' +
-                ", password='" + password + '\'' +
+                ", text='" + text + '\'' +
+                ", date=" + date +
                 '}';
     }
 }
